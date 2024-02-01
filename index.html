@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyage Vector</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <style>
+        /* Custom styles */
+        .trip-image {
+            height: 100px; /* Adjust for smaller image */
+            width: 100px; /* Adjust for smaller image */
+            background-size: cover;
+            background-position: center center;
+        }
+        .trip-card {
+            display: flex;
+            align-items: flex-start;
+        }
+        .trip-details {
+            display: none;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Top bar navigation -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <strong>Voyage Vector</strong>
+        </a>
+    </div>
+
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/my-trips">My Trips</a>
+            <a class="navbar-item" href="/settings">Settings</a>
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <div class="container">
+        <!-- Add Trip button -->
+        <div class="level">
+            <div class="level-left">
+                <button class="button is-info">
+                    <span>Add Trip</span>
+                        <span class="icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+
+                </button>
+            </div>
+        </div>
+        <!-- Paris Trip Card -->
+        <div class="card trip-card">
+            <div class="card-image">
+                <figure class="image trip-image" style="background-image: url('images/paris.jpg');"></figure>
+            </div>
+            <div class="card-content">
+                <div class="media-content">
+                    <p class="title is-4">Paris Girls Trip</p>
+                    <p class="subtitle is-6">25-27/3/2024</p>
+                    <a onclick="toggleDetails('paris-details')" class="button is-small">
+                            <span class="icon is-small">
+                                <i class="fas fa-angle-down"></i>
+                            </span>
+                    </a>
+                </div>
+                <div class="content " id="paris-details">
+                    <!-- Expandable trip details -->
+                    Departure Saturday 1/6 at 15:20 from Stockholm Airport.
+                    <!-- Add more details here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Singapore Trip Card -->
+        <div class="card trip-card">
+            <div class="card-image">
+                <figure class="image trip-image" style="background-image: url('images/singapore.jpg');"></figure>
+            </div>
+            <div class="card-content">
+                <div class="media-content">
+                    <p class="title is-4">Singapore Week</p>
+                    <p class="subtitle is-6">1/6-7/6/2024</p>
+                    <a onclick="toggleDetails('singapore-details')" class="button is-small">
+                            <span class="icon is-small">
+                                <i class="fas fa-angle-down"></i>
+                            </span>
+                    </a>
+                </div>
+                <div class="content " id="singapore-details">
+                    <!-- Expandable trip details -->
+                    Departure Saturday 1/6 at 15:20 from Stockholm Airport.
+                    <!-- Add more details here -->
+                </div>
+            </div>
+        </div>
+        <!-- ... Other trip cards ... -->
+    </div>
+</section>
+
+<!-- Font Awesome for icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+<script>
+    // Function to toggle the visibility of the expandable trip details
+    function toggleDetails(id) {
+        var details = document.getElementById(id);
+        details.style.display = details.style.display === 'none' ? '' : 'none';
+
+        // Rotate the arrow icon to indicate the state of the expansion
+        var icon = details.previousElementSibling.querySelector('.fa-angle-down');
+        icon.classList.toggle('fa-rotate-180');
+    }
+</script>
+</body>
+
+</html>
