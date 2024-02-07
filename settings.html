@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <!-- Bulma Switch Extension CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/bulma-switch/dist/css/bulma-switch.min.css">
+</head>
+<body>
+
+<!-- Top bar navigation -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <strong>Voyage Vector</strong>
+        </a>
+    </div>
+
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="index.html">My Trips</a>
+            <a class="navbar-item" href="settings.html">Settings</a>
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <div class="container">
+        <h1 class="title">Settings</h1>
+
+        <!-- Notification Toggle -->
+        <div class="field">
+            <input id="toggle-notification" type="checkbox" name="toggle-notification" class="switch" checked="checked">
+            <label for="toggle-notification">Notifications</label>
+        </div>
+
+        <!-- Transport Reminder Toggle -->
+        <div class="field">
+            <input id="toggle-transport" type="checkbox" name="toggle-transport" class="switch">
+            <label for="toggle-transport">Transport Reminder</label>
+        </div>
+
+        <!-- Accommodation Reminder Toggle -->
+        <div class="field">
+            <input id="toggle-accommodation" type="checkbox" name="toggle-accommodation" class="switch">
+            <label for="toggle-accommodation">Accommodation Reminder</label>
+        </div>
+
+        <!-- Reservation Reminder Toggle -->
+        <div class="field">
+            <input id="toggle-reservation" type="checkbox" name="toggle-reservation" class="switch">
+            <label for="toggle-reservation">Reservation Reminder</label>
+        </div>
+
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>

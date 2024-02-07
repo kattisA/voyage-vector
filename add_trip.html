@@ -19,7 +19,7 @@
     <div class="navbar-menu">
         <div class="navbar-start">
             <a class="navbar-item" href="index.html">My Trips</a>
-            <a class="navbar-item" href="/settings">Settings</a>
+            <a class="navbar-item" href="settings.html">Settings</a>
         </div>
     </div>
 </nav>
@@ -55,14 +55,19 @@
 
             <div class="field">
                 <label class="label">Image</label>
+                <div id="new-image" style="display: none;">
+                    <figure class="image is-128x128" >
+                        <img src="images/london.jpg" alt="London">
+                    </figure>
+                </div>
                 <div class="buttons">
-                    <button class="button is-info">
+                    <button type="button" class="button is-info" onclick="openModal('image-modal')">
                         <span class="icon is-small">
                             <i class="fas fa-upload"></i>
                         </span>
                         <span>Add Image</span>
                     </button>
-                    <button class="button is-warning">
+                    <button type="button" class="button is-warning" onclick="openModal('random-modal')">
                         <span class="icon is-small">
                             <i class="fas fa-random"></i>
                         </span>
@@ -70,32 +75,31 @@
                     </button>
                 </div>
             </div>
+            <!-- Hidden schedule item... -->
+            <article id="new-transport" class="media" style="display: none;">
+                <div class="media-left">
+                    <span class="tag is-info is-light"><strong>Sat 25/3, 15:20</strong></span>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        <span class="icon is-large">
+                        <i class="fas fa-plane fa-2x"></i>
+                        </span>
+                        <p>
+                            Flight SK1234 from Stockholm Airport <br>
+                            Arrival 17:30
+                        </p>
+                    </div>
+                </div>
+            </article>
 
-            <div class="field">
-                <button class="button is-fullwidth is-success">
-                    <span class="icon is-small">
-                        <i class="fas fa-bus"></i>
-                    </span>
+            <div class="buttons">
+                <button type="button"  class="button is-primary" onclick="openModal('transport-modal')">
+                    <span class="icon"><i class="fas fa-bus"></i></span>
                     <span>Add Transport</span>
                 </button>
-            </div>
-
-            <div class="field">
-                <button class="button is-fullwidth is-success">
-                    <span class="icon is-small">
-                        <i class="fas fa-bed"></i>
-                    </span>
-                    <span>Add Accommodation</span>
-                </button>
-            </div>
-
-            <div class="field">
-                <button class="button is-fullwidth is-success">
-                    <span class="icon is-small">
-                        <i class="fas fa-ticket-alt"></i>
-                    </span>
-                    <span>Add Reservation</span>
-                </button>
+                <button type="button"  class="button is-primary" ><span class="icon"><i class="fas fa-bed"></i></span><span>Add Accommodation</span></button>
+                <button type="button"  class="button is-primary" ><span class="icon"><i class="fas fa-ticket-alt"></i></span><span>Add Reservation</span></button>
             </div>
 
             <a href="london_trip.html" class="button is-primary">
@@ -104,6 +108,116 @@
         </form>
     </div>
 </section>
+<!-- Image Modal -->
+<div id="image-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Select image</p>
+            <button class="delete" aria-label="close" onclick="closeModal('image-modal')"></button>
+        </header>
+        <section class="modal-card-body">
+            <figure class="image is-128x128" >
+                <img src="images/london.jpg" alt="London">
+            </figure>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success" onclick="saveShow('new-image', 'image-modal')">Save Image</button>
+            <button class="button" onclick="closeModal('image-modal')">Cancel</button>
+        </footer>
+    </div>
+</div>
+<!-- Random Modal -->
+<div id="random-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Select Random Image</p>
+            <button class="delete" aria-label="close" onclick="closeModal('random-modal')"></button>
+        </header>
+        <section class="modal-card-body">
+            <figure class="image is-128x128" >
+                <img src="images/london.jpg" alt="London">
+            </figure>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success" onclick="saveShow('new-image', 'random-modal')">Save Image</button>
+            <button class="button" onclick="closeModal('random-modal')">Cancel</button>
+        </footer>
+    </div>
+</div>
+<!-- Transport Modal -->
+<div id="transport-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Add Transport</p>
+            <button class="delete" aria-label="close" onclick="closeModal('transport-modal')"></button>
+        </header>
+        <section class="modal-card-body">
+            <!-- Transport type buttons -->
+            <div class="buttons has-addons">
+                <button class="button is-info "><i class="fas fa-plane"></i></button>
+                <button class="button "><i class="fas fa-subway"></i></button>
+                <button class="button"><i class="fas fa-bus"></i></button>
+                <button class="button"><i class="fas fa-car"></i></button>
+                <button class="button"><i class="fas fa-ship"></i></button>
+            </div>
+            <form>
+                <div class="field">
+                    <div class="control is-expanded">
+                        <label class="label">Departure Date</label>
+                        <input class="input" type="date" name="start-date" value="2024-03-25">
+                    </div>
+                    <label class="label">Departure Time</label>
+                    <div class="control">
+                        <input class="input" type="text" value="15:20">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Reservation Number</label>
+                    <div class="control">
+                        <input class="input" type="text" value="SK1234">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Notes</label>
+                    <div class="control">
+                        <textarea class="textarea" >Flight SK1234 from Stockholm Airport <br>
+                            Arrival 17:30</textarea>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success" onclick="saveShow('new-transport', 'transport-modal')">Save Transport</button>
+            <button class="button" onclick="closeModal('transport-modal')">Cancel</button>
+        </footer>
+    </div>
+</div>
 
+<script>
+
+    function openModal(modalId) {
+        let modal = document.getElementById(modalId);
+        modal.classList.add('is-active');
+    }
+
+    function closeModal(modalId) {
+        let modal = document.getElementById(modalId);
+        modal.classList.remove('is-active');
+    }
+
+    function showItem(itemId) {
+        let newItem = document.getElementById(itemId);
+        newItem.style.display = 'flex';
+    }
+
+    function saveShow(itemId, modalId) {
+        showItem(itemId);
+        closeModal(modalId);
+    }
+
+</script>>
 </body>
 </html>
