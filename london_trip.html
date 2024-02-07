@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Trip - London</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+<!-- Top bar navigation -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <strong>Voyage Vector</strong>
+        </a>
+    </div>
+
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="index.html">My Trips</a>
+            <a class="navbar-item" href="/settings">Settings</a>
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <div class="container">
+        <div class="level">
+            <div class="level-left">
+                <div>
+                    <h1 class="title">London Consert</h1>
+                    <h2 class="subtitle">Weekend trip with Anna, 3 days in London, UK</h2>
+                </div>
+            </div>
+            <div class="level-right">
+                <figure class="image"  style="margin-right: 40rem; width: 256px; height: 256px;">
+                    <img src="images/london.jpg" alt="London">
+                </figure>
+            </div>
+        </div>
+
+        <div class="tabs is-boxed">
+            <ul>
+                <li class="tab is-active" onclick="openTab(event,'WebDev')"><a >Schedule</a></li>
+                <li class="tab" onclick="openTab(event,'WebAud')"><a >Diary</a></li>
+            </ul>
+        </div>
+        <div class="container section">
+            <div id="WebDev" class="content-tab" >
+                <div class="box">
+                    <!-- Schedule Items -->
+                    <article class="media">
+                        <div class="media-left">
+                            <span class="tag is-info is-light"><strong>Sat 25/3, 15:20</strong></span>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                        <span class="icon is-large">
+                        <i class="fas fa-plane fa-2x"></i>
+                        </span>
+                                <p>
+                                    Flight SK1234 from Stockholm Airport <br>
+                                    Arrival 17:30
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Hidden schedule item... -->
+                    <article id="new-transport" class="media" style="display: none;">
+                        <div class="media-left">
+                            <span class="tag is-info is-light"><strong>Sat 25/3, 19:30</strong></span>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <span class="icon is-large">
+                                    <i class="fas fa-subway fa-2x"></i>
+                                </span>
+                                <p>
+                                    Train to the city <br>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Hidden schedule item... -->
+                    <article id="new-accommodation" class="media" style="display: none;">
+                        <div class="media-left">
+                            <span class="tag is-info is-light"><strong>Sat 25/3 - 27/3</strong></span>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <span class="icon is-large">
+                                    <i class="fas fa-hotel fa-2x"></i>
+                                </span>
+                                <p>
+                                    Hotel London Square <br>
+                                    Take the subway to London Square station
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article id="new-reservation" class="media" style="display: none;">
+                        <div class="media-left">
+                            <span class="tag is-info is-light"><strong>Sat 25/3 20:30</strong></span>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <span class="icon is-large">
+                                   <i class="fas fa-clock fa-2x"></i>
+                                </span>
+                                <p>
+                                    Circles Restaurant <br>
+                                    15 minute policy- Order taxi?
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="buttons">
+                        <button class="button is-primary" onclick="openModal('transport-modal')">
+                            <span class="icon"><i class="fas fa-bus"></i></span>
+                            <span>Add Transport</span>
+                        </button>
+                        <button class="button is-primary" onclick="openModal('accommodation-modal')"><span class="icon"><i class="fas fa-bed"></i></span><span>Add Accommodation</span></button>
+                        <button class="button is-primary" onclick="openModal('reservation-modal')"><span class="icon"><i class="fas fa-ticket-alt"></i></span><span>Add Reservation</span></button>
+                    </div>
+                </div>
+            </div>
+            <div id="WebAud" class="content-tab" style="display:none">
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>Sat 1/6:</strong> First Day. The trip was exhausting. <br>
+                                <strong>Sun 2/6:</strong> Sightseeing Day. We started off with a visit to the museum of...
+                                <span id="new-diary" style="display: none;"><strong>Mon 3/6:</strong> We had the best day at the pool. In the evening we went to the ...</span>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <button class="button is-primary" onclick="openModal('diary-modal')"><span class="icon"><i class="fas fa-plus"></i></span><span>Add new</span></button>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <button class="button is-danger" onclick="openModal('delete-trip-modal')">
+                <span><i class="fas fa-trash"></i> Delete Trip</span>
+            </button>
+        </div>
+
+
+    </div>
+</section>
+<!-- Modals -->
+<!-- Transport Modal -->
+<div id="transport-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Add Transport</p>
+            <button class="delete" aria-label="close" onclick="closeModal('transport-modal')"></button>
+        </header>
+        <section class="modal-card-body">
+            <!-- Transport type buttons -->
+            <div class="buttons has-addons">
+                <button class="button "><i class="fas fa-plane"></i></button>
+                <button class="button is-info"><i class="fas fa-subway"></i></button>
+                <button class="button"><i class="fas fa-bus"></i></button>
+                <button class="button"><i class="fas fa-car"></i></button>
+                <button class="button"><i class="fas fa-ship"></i></button>
+            </div>
+            <!-- Transport Form -->
+            <form id="transport-form">
+                <div class="field">
+                    <div class="control is-expanded">
+                        <label class="label">Departure Date</label>
+                        <input class="input" type="date" name="start-date" value="2024-03-25">
+                    </div>
+                    <label class="label">Departure Time</label>
+                    <div class="control">
+                        <input class="input" type="text" value="19:30">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Reservation Number</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Reservation Number">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Notes</label>
+                    <div class="control">
+                        <textarea class="textarea" >Train to the city</textarea>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success" onclick="saveShow('new-transport', 'transport-modal')">Save Transport</button>
+            <button class="button" onclick="closeModal('transport-modal')">Cancel</button>
+        </footer>
+    </div>
+</div>
+<!-- Accommodation Modal -->
+<div id="accommodation-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Add Accommodation</p>
+            <button class="delete" aria-label="close" onclick="closeModal('accommodation-modal')"></button>
+        </header>
+        <section class="modal-card-body">
+            <form id="accommodation-form">
+                <div class="field">
+                    <label class="label">Staying at</label>
+                    <div class="control">
+                        <input class="input" type="text" value="Hotel London Square">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Address</label>
+                    <div class="control">
+                        <input class="input" type="text" value="R87 Church Road London">
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control is-expanded">
+                        <label class="label" for="start-date">Start Date</label>
+                        <input class="input" type="date" id="start-date" name="start-date" value="2024-03-25">
+                    </div>
+                    <div class="control is-expanded">
+                        <label class="label" for="end-date">End Date</label>
+                        <input class="input" type="date" id="end-date" name="end-date">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Notes</label>
+                    <div class="control">
+                        <label>
+                            <textarea class="textarea" >Take the subway to London Square station </textarea>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success" onclick="saveShow('new-accommodation', 'accommodation-modal')">Save Accommodation</button>
+            <button class="button" onclick="closeModal('accommodation-modal')">Cancel</button>
+        </footer>
+    </div>
+</div>
+<!-- Reservation Modal -->
+<div id="reservation-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Add Reservation</p>
+            <button class="delete" aria-label="close" onclick="closeModal('reservation-modal')"></button>
+        </header>
+        <section class="modal-card-body">
+            <form >
+                <div class="field">
+                    <div class="control is-expanded">
+                        <label class="label">Reservation at</label>
+                        <input class="input" type="text" value="Circles Restaurant">
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control is-expanded">
+                        <label class="label">Date</label>
+                        <input class="input" type="date" name="start-date" value="2024-03-26">
+                    </div>
+                    <div class="control is-expanded">
+                        <label class="label">Reservation Time</label>
+                        <input class="input" type="text" value="20:30">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Notes</label>
+                    <div class="control">
+                        <textarea class="textarea" >15 minute policy- Order taxi?</textarea>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success" onclick="saveShow('new-reservation', 'reservation-modal')">Save Reservation</button>
+            <button class="button" onclick="closeModal('reservation-modal')">Cancel</button>
+        </footer>
+    </div>
+</div>
+<!-- Diary Modal -->
+<div id="diary-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Add Diary Story</p>
+            <button class="delete" aria-label="close" onclick="closeModal('diary-modal')"></button>
+        </header>
+        <section class="modal-card-body">
+            <form >
+                <div class="field is-grouped">
+                    <div class="control is-expanded">
+                        <label class="label" for="start-date">Date</label>
+                        <input class="input" type="date" name="start-date" value="2024-03-26">
+                    </div>
+                    <div class="control is-expanded">
+                        <label class="label">Diary Title</label>
+                        <input class="input" type="text" value="Day at the pool">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Story</label>
+                    <div class="control">
+                        <textarea class="textarea" >We had the best day at the pool. In the evening we went to the best restaurant possible. We were so happy.</textarea>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success" onclick="saveShow('new-diary', 'diary-modal')">Save Diary</button>
+            <button class="button" onclick="closeModal('diary-modal')">Cancel</button>
+        </footer>
+    </div>
+</div>
+
+<!-- Delete Trip Modal -->
+<div id="delete-trip-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Delete Trip</p>
+            <button class="delete" aria-label="close" onclick="closeModal('delete-trip-modal')"></button>
+        </header>
+        <section class="modal-card-body">
+            <div class="content has-text-centered">
+                <p class="is-size-5">
+                    <i class="fas fa-exclamation-triangle"></i><strong>Are you sure you want to delete London Consert?</strong>
+                </p>
+            </div>
+        </section>
+        <footer class="modal-card-foot is-justify-content-space-around">
+            <button class="button is-light" onclick="closeModal('delete-trip-modal')">No</button>
+            <button class="button is-danger" onclick="deleteTrip()">Delete</button>
+        </footer>
+    </div>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        let i, x, tabLinks;
+        x = document.getElementsByClassName("content-tab");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tabLinks = document.getElementsByClassName("tab");
+        for (i = 0; i < x.length; i++) {
+            tabLinks[i].className = tabLinks[i].className.replace(" is-active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " is-active";
+    }
+    function openModal(modalId) {
+        let modal = document.getElementById(modalId);
+        modal.classList.add('is-active');
+    }
+
+    function closeModal(modalId) {
+        let modal = document.getElementById(modalId);
+        modal.classList.remove('is-active');
+    }
+
+    function showItem(itemId) {
+        let newItem = document.getElementById(itemId);
+        newItem.style.display = 'flex';
+    }
+
+    function saveShow(itemId, modalId) {
+        showItem(itemId);
+        closeModal(modalId);
+    }
+
+    function deleteTrip() {
+        closeModal('delete-trip-modal');
+        // Redirect to index.html
+        window.location.href = 'index.html';
+
+    }
+</script>
+
+</body>
+</html>
