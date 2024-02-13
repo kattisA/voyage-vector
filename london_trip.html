@@ -29,8 +29,9 @@
         <div class="level">
             <div class="level-left">
                 <div>
-                    <h1 class="title">London Consert</h1>
-                    <h2 class="subtitle">Weekend trip with Anna, 3 days in London, UK</h2>
+                    <h1 class="title">London Concert</h1>
+                    <p class="subtitle is-4">23-30/8/2024</p>
+                    <h2 class="subtitle">Concert in London with Anna, one week</h2>
                 </div>
             </div>
             <div class="level-right">
@@ -52,7 +53,7 @@
                     <!-- Schedule Items -->
                     <article class="media">
                         <div class="media-left">
-                            <span class="tag is-info is-light"><strong>Sat 25/3, 15:20</strong></span>
+                            <span class="tag is-info is-light"><strong>Sat 23/8, 15:20</strong></span>
                         </div>
                         <div class="media-content">
                             <div class="content">
@@ -66,27 +67,9 @@
                             </div>
                         </div>
                     </article>
-
-                    <!-- Hidden schedule item... -->
-                    <article id="new-transport" class="media" style="display: none;">
+                    <article  class="media" >
                         <div class="media-left">
-                            <span class="tag is-info is-light"><strong>Sat 25/3, 19:30</strong></span>
-                        </div>
-                        <div class="media-content">
-                            <div class="content">
-                                <span class="icon is-large">
-                                    <i class="fas fa-subway fa-2x"></i>
-                                </span>
-                                <p>
-                                    Train to the city <br>
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                    <!-- Hidden schedule item... -->
-                    <article id="new-accommodation" class="media" style="display: none;">
-                        <div class="media-left">
-                            <span class="tag is-info is-light"><strong>Sat 25/3 - 27/3</strong></span>
+                            <span class="tag is-info is-light"><strong>Sat 23/8 - 26/8</strong></span>
                         </div>
                         <div class="media-content">
                             <div class="content">
@@ -100,9 +83,25 @@
                             </div>
                         </div>
                     </article>
-                    <article id="new-reservation" class="media" style="display: none;">
+                    <!-- Hidden schedule item... -->
+                    <article id="new-transport" class="media" style="display: none;">
                         <div class="media-left">
-                            <span class="tag is-info is-light"><strong>Sat 25/3 20:30</strong></span>
+                            <span class="tag is-info is-light"><strong>Sat 23/8, 19:30</strong></span>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <span class="icon is-large">
+                                    <i class="fas fa-subway fa-2x"></i>
+                                </span>
+                                <p>
+                                    Train to the city <br>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="media" >
+                        <div class="media-left">
+                            <span class="tag is-info is-light"><strong>Sat 23/8 20:30</strong></span>
                         </div>
                         <div class="media-content">
                             <div class="content">
@@ -116,14 +115,49 @@
                             </div>
                         </div>
                     </article>
+
+                    <!-- Hidden schedule item... -->
+                    <article id="new-accommodation" class="media" style="display: none;">
+                        <div class="media-left">
+                            <span class="tag is-info is-light"><strong>Mon 26/8 - 30/8</strong></span>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <span class="icon is-large">
+                                    <i class="fas fa-hotel fa-2x"></i>
+                                </span>
+                                <p>
+                                    Hotel Paddington Palace <br>
+                                    Check in from 15:00
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Hidden schedule item... -->
+                    <article id="new-reservation" class="media" style="display: none;">
+                        <div class="media-left">
+                            <span class="tag is-info is-light"><strong>Mon 26/8 20:00</strong></span>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <span class="icon is-large">
+                                   <i class="fas fa-clock fa-2x"></i>
+                                </span>
+                                <p>
+                                    The Hipster Restaurant <br>
+                                    Preorder menu available
+                                </p>
+                            </div>
+                        </div>
+                    </article>
                 </div>
                 <div class="buttons">
-                    <button class="button is-primary" onclick="openModal('transport-modal')">
+                    <button class="button" onclick="openModal('transport-modal')">
                         <span class="icon"><i class="fas fa-bus"></i></span>
                         <span>Add Transport</span>
                     </button>
-                    <button class="button is-primary" onclick="openModal('accommodation-modal')"><span class="icon"><i class="fas fa-bed"></i></span><span>Add Accommodation</span></button>
-                    <button class="button is-primary" onclick="openModal('reservation-modal')"><span class="icon"><i class="fas fa-ticket-alt"></i></span><span>Add Reservation</span></button>
+                    <button class="button" onclick="openModal('accommodation-modal')"><span class="icon"><i class="fas fa-bed"></i></span><span>Add Accommodation</span></button>
+                    <button class="button" onclick="openModal('reservation-modal')"><span class="icon"><i class="fas fa-clock"></i></span><span>Add Reservation</span></button>
                 </div>
             </div>
             <div id="WebAud" class="content-tab" style="display:none">
@@ -138,11 +172,11 @@
                         </div>
                     </div>
                 </article>
-                <button class="button is-primary" onclick="openModal('diary-modal')"><span class="icon"><i class="fas fa-plus"></i></span><span>Add new</span></button>
+                <button class="button is-light" onclick="openModal('diary-modal')"><span class="icon"><i class="fas fa-plus"></i></span><span>Add new</span></button>
             </div>
         </div>
         <div class="container mt-5">
-            <button class="button is-danger" onclick="openModal('delete-trip-modal')">
+            <button class="button is-dark" onclick="openModal('delete-trip-modal')">
                 <span><i class="fas fa-trash"></i> Delete Trip</span>
             </button>
         </div>
@@ -163,7 +197,7 @@
             <!-- Transport type buttons -->
             <div class="buttons has-addons">
                 <button class="button "><i class="fas fa-plane"></i></button>
-                <button class="button is-info"><i class="fas fa-subway"></i></button>
+                <button class="button is-light"><i class="fas fa-subway"></i></button>
                 <button class="button"><i class="fas fa-bus"></i></button>
                 <button class="button"><i class="fas fa-car"></i></button>
                 <button class="button"><i class="fas fa-ship"></i></button>
@@ -173,7 +207,7 @@
                 <div class="field">
                     <div class="control is-expanded">
                         <label class="label">Departure Date</label>
-                        <input class="input" type="date" name="start-date" value="2024-03-25">
+                        <input class="input" type="date" name="start-date" value="2024-08-23">
                     </div>
                     <label class="label">Departure Time</label>
                     <div class="control">
@@ -195,7 +229,7 @@
             </form>
         </section>
         <footer class="modal-card-foot">
-            <button class="button is-success" onclick="saveShow('new-transport', 'transport-modal')">Save Transport</button>
+            <button class="button is-white" onclick="saveShow('new-transport', 'transport-modal')">Save Transport</button>
             <button class="button" onclick="closeModal('transport-modal')">Cancel</button>
         </footer>
     </div>
@@ -213,37 +247,37 @@
                 <div class="field">
                     <label class="label">Staying at</label>
                     <div class="control">
-                        <input class="input" type="text" value="Hotel London Square">
+                        <input class="input" type="text" value="Hotel Paddington Palace">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Address</label>
                     <div class="control">
-                        <input class="input" type="text" value="R87 Church Road London">
+                        <input class="input" type="text" value="55 Queens Road London">
                     </div>
                 </div>
                 <div class="field is-grouped">
                     <div class="control is-expanded">
                         <label class="label" for="start-date">Start Date</label>
-                        <input class="input" type="date" id="start-date" name="start-date" value="2024-03-25">
+                        <input class="input" type="date" id="start-date" name="start-date" value="2024-08-26">
                     </div>
                     <div class="control is-expanded">
                         <label class="label" for="end-date">End Date</label>
-                        <input class="input" type="date" id="end-date" name="end-date">
+                        <input class="input" type="date" id="end-date" name="end-date" value="2024-08-30">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Notes</label>
                     <div class="control">
                         <label>
-                            <textarea class="textarea" >Take the subway to London Square station </textarea>
+                            <textarea class="textarea" >Hotel Paddington Palace Check in from 15:00 </textarea>
                         </label>
                     </div>
                 </div>
             </form>
         </section>
         <footer class="modal-card-foot">
-            <button class="button is-success" onclick="saveShow('new-accommodation', 'accommodation-modal')">Save Accommodation</button>
+            <button class="button is-white" onclick="saveShow('new-accommodation', 'accommodation-modal')">Save Accommodation</button>
             <button class="button" onclick="closeModal('accommodation-modal')">Cancel</button>
         </footer>
     </div>
@@ -261,29 +295,29 @@
                 <div class="field">
                     <div class="control is-expanded">
                         <label class="label">Reservation at</label>
-                        <input class="input" type="text" value="Circles Restaurant">
+                        <input class="input" type="text" value="The Hipster Restaurant ">
                     </div>
                 </div>
                 <div class="field is-grouped">
                     <div class="control is-expanded">
                         <label class="label">Date</label>
-                        <input class="input" type="date" name="start-date" value="2024-03-26">
+                        <input class="input" type="date" name="start-date" value="2024-08-26">
                     </div>
                     <div class="control is-expanded">
                         <label class="label">Reservation Time</label>
-                        <input class="input" type="text" value="20:30">
+                        <input class="input" type="text" value="20:00">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Notes</label>
                     <div class="control">
-                        <textarea class="textarea" >15 minute policy- Order taxi?</textarea>
+                        <textarea class="textarea" >Preorder menu available</textarea>
                     </div>
                 </div>
             </form>
         </section>
         <footer class="modal-card-foot">
-            <button class="button is-success" onclick="saveShow('new-reservation', 'reservation-modal')">Save Reservation</button>
+            <button class="button is-white" onclick="saveShow('new-reservation', 'reservation-modal')">Save Reservation</button>
             <button class="button" onclick="closeModal('reservation-modal')">Cancel</button>
         </footer>
     </div>
@@ -317,7 +351,7 @@
             </form>
         </section>
         <footer class="modal-card-foot">
-            <button class="button is-success" onclick="saveShow('new-diary', 'diary-modal')">Save Diary</button>
+            <button class="button is-white" onclick="saveShow('new-diary', 'diary-modal')">Save Diary</button>
             <button class="button" onclick="closeModal('diary-modal')">Cancel</button>
         </footer>
     </div>
@@ -334,13 +368,13 @@
         <section class="modal-card-body">
             <div class="content has-text-centered">
                 <p class="is-size-5">
-                    <i class="fas fa-exclamation-triangle"></i><strong>Are you sure you want to delete London Consert?</strong>
+                    <i class="fas fa-exclamation-triangle"></i><strong> Are you sure you want to delete London Consert?</strong>
                 </p>
             </div>
         </section>
         <footer class="modal-card-foot is-justify-content-space-around">
             <button class="button is-light" onclick="closeModal('delete-trip-modal')">No</button>
-            <button class="button is-danger" onclick="deleteTrip()">Delete</button>
+            <button class="button is-dark" onclick="deleteTrip()">Delete</button>
         </footer>
     </div>
 </div>

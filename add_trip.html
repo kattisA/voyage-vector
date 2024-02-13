@@ -11,7 +11,7 @@
 <!-- Top bar navigation -->
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="/">
+        <a class="navbar-item" href="index.html">
             <strong>Voyage Vector</strong>
         </a>
     </div>
@@ -31,25 +31,25 @@
             <div class="field">
                 <label class="label" for="destination">Destination</label>
                 <div class="control">
-                    <input class="input" type="text" id="destination" name="destination" value="London Consert" placeholder="Enter destination">
+                    <input class="input" type="text" id="destination" name="destination" value="London Concert" placeholder="Enter destination">
                 </div>
             </div>
 
             <div class="field">
                 <label class="label" for="description">Description</label>
                 <div class="control">
-                    <textarea class="textarea" id="description" name="description">Weekend trip with Anna, 3 days in London, UK</textarea>
+                    <textarea class="textarea" id="description" name="description">Concert in London with Anna, one week</textarea>
                 </div>
             </div>
 
             <div class="field is-grouped">
                 <div class="control is-expanded">
                     <label class="label" for="start-date">Start Date</label>
-                    <input class="input" type="date" id="start-date" name="start-date">
+                    <input class="input" type="date" id="start-date" name="start-date" value="2024-08-23">
                 </div>
                 <div class="control is-expanded">
                     <label class="label" for="end-date">End Date</label>
-                    <input class="input" type="date" id="end-date" name="end-date">
+                    <input class="input" type="date" id="end-date" name="end-date" value="2024-08-30">
                 </div>
             </div>
 
@@ -61,13 +61,13 @@
                     </figure>
                 </div>
                 <div class="buttons">
-                    <button type="button" class="button is-info" onclick="openModal('image-modal')">
+                    <button type="button" class="button" onclick="openModal('image-modal')">
                         <span class="icon is-small">
                             <i class="fas fa-upload"></i>
                         </span>
                         <span>Add Image</span>
                     </button>
-                    <button type="button" class="button is-warning" onclick="openModal('random-modal')">
+                    <button type="button" class="button " onclick="openModal('random-modal')">
                         <span class="icon is-small">
                             <i class="fas fa-random"></i>
                         </span>
@@ -78,7 +78,7 @@
             <!-- Hidden schedule item... -->
             <article id="new-transport" class="media" style="display: none;">
                 <div class="media-left">
-                    <span class="tag is-info is-light"><strong>Sat 25/3, 15:20</strong></span>
+                    <span class="tag is-info is-light"><strong>Sat 23/8, 15:20</strong></span>
                 </div>
                 <div class="media-content">
                     <div class="content">
@@ -92,17 +92,49 @@
                     </div>
                 </div>
             </article>
+            <article id="new-accommodation" class="media" style="display: none;">
+                <div class="media-left">
+                    <span class="tag is-info is-light"><strong>Sat 23/8 - 26/8</strong></span>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                                <span class="icon is-large">
+                                    <i class="fas fa-hotel fa-2x"></i>
+                                </span>
+                        <p>
+                            Hotel London Square <br>
+                            Take the subway to London Square station
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article id="new-reservation" class="media" style="display: none;">
+                <div class="media-left">
+                    <span class="tag is-info is-light"><strong>Sat 23/3 20:30</strong></span>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                                <span class="icon is-large">
+                                   <i class="fas fa-clock fa-2x"></i>
+                                </span>
+                        <p>
+                            Circles Restaurant <br>
+                            15 minute policy- Order taxi?
+                        </p>
+                    </div>
+                </div>
+            </article>
 
             <div class="buttons">
-                <button type="button"  class="button is-primary" onclick="openModal('transport-modal')">
+                <button type="button"  class="button" onclick="openModal('transport-modal')">
                     <span class="icon"><i class="fas fa-bus"></i></span>
                     <span>Add Transport</span>
                 </button>
-                <button type="button"  class="button is-primary" ><span class="icon"><i class="fas fa-bed"></i></span><span>Add Accommodation</span></button>
-                <button type="button"  class="button is-primary" ><span class="icon"><i class="fas fa-ticket-alt"></i></span><span>Add Reservation</span></button>
+                <button type="button"  class="button" onclick="openModal('accommodation-modal')" ><span class="icon"><i class="fas fa-bed"></i></span><span>Add Accommodation</span></button>
+                <button type="button"  class="button" onclick="openModal('reservation-modal')"><span class="icon"><i class="fas fa-clock"></i></span><span>Add Reservation</span></button>
             </div>
 
-            <a href="london_trip.html" class="button is-primary">
+            <a href="london_trip.html" class="button is-dark">
                 <span>Save Trip</span>
             </a>
         </form>
@@ -122,7 +154,7 @@
             </figure>
         </section>
         <footer class="modal-card-foot">
-            <button class="button is-success" onclick="saveShow('new-image', 'image-modal')">Save Image</button>
+            <button class="button is-white" onclick="saveShow('new-image', 'image-modal')">Save Image</button>
             <button class="button" onclick="closeModal('image-modal')">Cancel</button>
         </footer>
     </div>
@@ -141,7 +173,7 @@
             </figure>
         </section>
         <footer class="modal-card-foot">
-            <button class="button is-success" onclick="saveShow('new-image', 'random-modal')">Save Image</button>
+            <button class="button is-white" onclick="saveShow('new-image', 'random-modal')">Save Image</button>
             <button class="button" onclick="closeModal('random-modal')">Cancel</button>
         </footer>
     </div>
@@ -157,7 +189,7 @@
         <section class="modal-card-body">
             <!-- Transport type buttons -->
             <div class="buttons has-addons">
-                <button class="button is-info "><i class="fas fa-plane"></i></button>
+                <button class="button is-light "><i class="fas fa-plane"></i></button>
                 <button class="button "><i class="fas fa-subway"></i></button>
                 <button class="button"><i class="fas fa-bus"></i></button>
                 <button class="button"><i class="fas fa-car"></i></button>
@@ -167,7 +199,7 @@
                 <div class="field">
                     <div class="control is-expanded">
                         <label class="label">Departure Date</label>
-                        <input class="input" type="date" name="start-date" value="2024-03-25">
+                        <input class="input" type="date" name="start-date" value="2024-08-23">
                     </div>
                     <label class="label">Departure Time</label>
                     <div class="control">
@@ -183,15 +215,103 @@
                 <div class="field">
                     <label class="label">Notes</label>
                     <div class="control">
-                        <textarea class="textarea" >Flight SK1234 from Stockholm Airport <br>
+                        <textarea class="textarea" >Flight SK1234 from Stockholm Airport
                             Arrival 17:30</textarea>
                     </div>
                 </div>
             </form>
         </section>
         <footer class="modal-card-foot">
-            <button class="button is-success" onclick="saveShow('new-transport', 'transport-modal')">Save Transport</button>
+            <button class="button is-white" onclick="saveShow('new-transport', 'transport-modal')">Save Transport</button>
             <button class="button" onclick="closeModal('transport-modal')">Cancel</button>
+        </footer>
+    </div>
+</div>
+<!-- Accommodation Modal -->
+<div id="accommodation-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Add Accommodation</p>
+            <button class="delete" aria-label="close" onclick="closeModal('accommodation-modal')"></button>
+        </header>
+        <section class="modal-card-body">
+            <form id="accommodation-form">
+                <div class="field">
+                    <label class="label">Staying at</label>
+                    <div class="control">
+                        <input class="input" type="text" value="Hotel London Square">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Address</label>
+                    <div class="control">
+                        <input class="input" type="text" value="R87 Church Road London">
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control is-expanded">
+                        <label class="label">Start Date</label>
+                        <input class="input" type="date" name="start-date" value="2024-08-23">
+                    </div>
+                    <div class="control is-expanded">
+                        <label class="label" >End Date</label>
+                        <input class="input" type="date" name="end-date" value="2024-08-26">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Notes</label>
+                    <div class="control">
+                        <label>
+                            <textarea class="textarea" >Take the subway to London Square station </textarea>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-white" onclick="saveShow('new-accommodation', 'accommodation-modal')">Save Accommodation</button>
+            <button class="button" onclick="closeModal('accommodation-modal')">Cancel</button>
+        </footer>
+    </div>
+</div>
+<!-- Reservation Modal -->
+<div id="reservation-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Add Reservation</p>
+            <button class="delete" aria-label="close" onclick="closeModal('reservation-modal')"></button>
+        </header>
+        <section class="modal-card-body">
+            <form >
+                <div class="field">
+                    <div class="control is-expanded">
+                        <label class="label">Reservation at</label>
+                        <input class="input" type="text" value="Circles Restaurant">
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control is-expanded">
+                        <label class="label">Date</label>
+                        <input class="input" type="date" name="start-date" value="2024-03-26">
+                    </div>
+                    <div class="control is-expanded">
+                        <label class="label">Reservation Time</label>
+                        <input class="input" type="text" value="20:30">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Notes</label>
+                    <div class="control">
+                        <textarea class="textarea" >15 minute policy- Order taxi?</textarea>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-white" onclick="saveShow('new-reservation', 'reservation-modal')">Save Reservation</button>
+            <button class="button" onclick="closeModal('reservation-modal')">Cancel</button>
         </footer>
     </div>
 </div>
