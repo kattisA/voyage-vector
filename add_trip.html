@@ -96,13 +96,13 @@
                             </div>
                             <div class="media-right ml-2  " >
                                 <div class="buttons has-addons is-flex-direction-column" style="align-items: flex-start;" >
-                                    <button type="button" class="button" onclick="openModal('image-modal')">
+                                    <button type="button" class="button" onclick="openModal('image-modal')" style="background-color: #8A8EB3; color: black;">
                                     <span class="icon is-small">
                                         <i class="fas fa-upload"></i>
                                     </span>
                                         <span>Add Image</span>
                                     </button>
-                                    <button type="button" class="button" onclick="openModal('random-modal')">
+                                    <button type="button" class="button" onclick="openModal('random-modal')" style="background-color: #C5CBFF; color: black;">
                                     <span class="icon is-small">
                                         <i class="fas fa-random"></i>
                                     </span>
@@ -153,15 +153,14 @@
                         </article>
 
                         <div class="buttons mt-2">
-                            <button type="button"  class="button" onclick="openModal('transport-modal')">
-                                <span class="icon"></span>
+                            <button type="button"  class="button" onclick="openModal('transport-modal')" style="background-color: #EABFFF; color: #363636;">
                                 <span>Add Transport</span>
                             </button>
-                            <button type="button"  class="button" onclick="openModal('accommodation-modal')" ><span class="icon"><i class="fas fa-bed"></i></span><span>Add Accommodation</span></button>
-                            <button type="button"  class="button" onclick="openModal('reservation-modal')"><span class="icon"><i class="fas fa-clock"></i></span><span>Add Reservation</span></button>
+                            <button type="button"  class="button" onclick="openModal('accommodation-modal')" style="background-color: #EABFFF; color: #363636;" ><span>Add Accommodation</span></button>
+                            <button type="button"  class="button" onclick="openModal('reservation-modal')" style="background-color: #EABFFF; color: #363636;"><span>Add Reservation</span></button>
                         </div>
 
-                        <a href="london_trip.html" class="button is-dark is-pulled-right">
+                        <a href="london_trip.html" class="button is-pulled-right" style="background-color: #bbe4a7; color: black;">
                             <span>Save Trip</span>
                         </a>
                     </form>
@@ -187,9 +186,9 @@
                 <img src="images/london.jpg" alt="London">
             </figure>
         </section>
-        <footer class="modal-card-foot">
-            <button class="button" onclick="saveShowAndHide('new-image', 'placeholder', 'image-modal')">Save Image</button>
-            <button class="button" onclick="closeModal('image-modal')">Cancel</button>
+        <footer class="modal-card-foot" style="justify-content: flex-end;">
+            <button class="button" onclick="closeModal('image-modal')" style="background-color: #d26b8d; color: black;">Cancel</button>
+            <button class="button" onclick="saveShowAndHide('new-image', 'placeholder', 'image-modal')" style="background-color: #bbe4a7; color: black;">Save Image</button>
         </footer>
     </div>
 </div>
@@ -206,9 +205,9 @@
                 <img src="images/london.jpg" alt="London">
             </figure>
         </section>
-        <footer class="modal-card-foot">
-            <button class="button" onclick="saveShowAndHide('new-image', 'placeholder', 'random-modal')">Save Image</button>
-            <button class="button" onclick="closeModal('random-modal')">Cancel</button>
+        <footer class="modal-card-foot" style="justify-content: flex-end;">
+            <button class="button" onclick="closeModal('random-modal')" style="background-color: #d26b8d; color: black;">Cancel</button>
+            <button class="button" onclick="saveShowAndHide('new-image', 'placeholder', 'random-modal')"  style="background-color: #bbe4a7; color: black;">Save Image</button>
         </footer>
     </div>
 </div>
@@ -255,9 +254,9 @@
                 </div>
             </form>
         </section>
-        <footer class="modal-card-foot">
-            <button class="button" onclick="saveShow('new-transport', 'transport-modal')">Save Transport</button>
-            <button class="button" onclick="closeModal('transport-modal')">Cancel</button>
+        <footer class="modal-card-foot" style="justify-content: flex-end;">
+            <button class="button" onclick="closeModal('transport-modal')" style="background-color: #d26b8d; color: black;">Cancel</button>
+            <button class="button" onclick="saveShow('new-transport', 'transport-modal')"  style="background-color: #bbe4a7; color: black;">Save Transport</button>
         </footer>
     </div>
 </div>
@@ -303,9 +302,9 @@
                 </div>
             </form>
         </section>
-        <footer class="modal-card-foot">
-            <button class="button" onclick="saveShow('new-accommodation', 'accommodation-modal')">Save Accommodation</button>
-            <button class="button" onclick="closeModal('accommodation-modal')">Cancel</button>
+        <footer class="modal-card-foot" style="justify-content: flex-end;">
+            <button class="button" onclick="closeModal('accommodation-modal')" style="background-color: #d26b8d; color: black;">Cancel</button>
+            <button class="button" onclick="saveShow('new-accommodation', 'accommodation-modal')"  style="background-color: #bbe4a7; color: black;">Save Accommodation</button>
         </footer>
     </div>
 </div>
@@ -343,9 +342,9 @@
                 </div>
             </form>
         </section>
-        <footer class="modal-card-foot">
-            <button class="button" onclick="saveShow('new-reservation', 'reservation-modal')">Save Reservation</button>
-            <button class="button" onclick="closeModal('reservation-modal')">Cancel</button>
+        <footer class="modal-card-foot" style="justify-content: flex-end;">
+            <button class="button" onclick="closeModal('reservation-modal')" style="background-color: #d26b8d; color: black;">Cancel</button>
+            <button class="button" onclick="saveShow('new-reservation', 'reservation-modal')"  style="background-color: #bbe4a7; color: black;">Save Reservation</button>
         </footer>
     </div>
 </div>
