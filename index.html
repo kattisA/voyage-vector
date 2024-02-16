@@ -7,6 +7,28 @@
     <title>Voyage Vector</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url('images/photos.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+        }
+        .central-container {
+            background-color: white;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+            width: auto;
+            max-width: 100%;
+        }
         /* Custom styles */
         .trip-image {
             height: 250px;
@@ -22,120 +44,141 @@
 </head>
 
 <body>
-<!-- Top bar navigation -->
-<div class="container">
-    <div class="columns is-centered">
-        <div class="column is-two-thirds">
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="index.html">
-                        <strong>Voyage Vector</strong>
-                    </a>
-                </div>
-
-                <div class="navbar-menu">
-                    <div class="navbar-start">
-                        <a class="navbar-item" href="index.html">My Trips</a>
-                        <a class="navbar-item" href="settings.html">Settings</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-</div>
-
-
-
-
-<section class="section">
+<div class="container central-container">
+    <!-- Top bar navigation -->
     <div class="container">
         <div class="columns is-centered">
-            <div class="column is-two-thirds">
-                <div class="level">
-                    <div class="level-left">
-                        <a href="add_trip.html" class="button">
-                            <span>Add Trip</span>
-                            <span class="icon"><i class="fas fa-plus"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Paris Trip Card -->
-        <div class="columns is-centered">
-            <div class="column is-two-thirds">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-left">
-                                <figure class="image trip-image">
-                                    <img src="images/paris.jpg" alt="Paris">
-                                </figure>
-                            </div>
-                            <div class="media-content">
-                                <p class="title is-4">Paris Girls Trip</p>
-                                <p class="subtitle is-6">25-27/3/2024</p>
-                                <div class="level is-mobile">
-                                    <div class="level-left">
-                                        <!-- Left empty for spacing -->
-                                    </div>
-                                    <div class="level-right">
-                                        <a onclick="toggleDetails('paris-details')" class="button is-small is-pulled-right">
-                                          <span class="icon is-small">
-                                            <i class="fas fa-angle-down"></i>
-                                          </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="content " id="paris-details">
-                                    Departure Monday 25/3 at 06:30 from Stockholm Airport.
-                                </div>
-                            </div>
+            <div class="column">
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <div class="navbar-item is-size-3 has-text-black-ter">
+                            <strong>Voyage Vector</strong>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Singapore Trip Card -->
-        <div class="columns is-centered">
-            <div class="column is-two-thirds">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-left">
-                                <figure class="image trip-image">
-                                    <img src="images/singapore.jpg" alt="Singapore">
-                                </figure>
-                            </div>
-                            <div class="media-content">
-                                <p class="title is-4">Singapore Week</p>
-                                <p class="subtitle is-6">1/6-7/6/2024</p>
-                                <div class="level is-mobile">
-                                    <div class="level-left">
-                                        <!-- Left empty for spacing -->
-                                    </div>
-                                    <div class="level-right">
-                                        <a onclick="toggleDetails('singapore-details')" class="button is-small is-pulled-right">
-                                          <span class="icon is-small">
-                                            <i class="fas fa-angle-down"></i>
-                                          </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="content " id="singapore-details">
-                                    Departure Saturday 1/6 at 15:20 from Stockholm Airport.
-                                </div>
-                            </div>
+                    <div class="navbar-menu">
+                        <div class="navbar-start">
+                            <a class="navbar-item is-size-4 has-text-black-ter" href="index.html">My Trips</a>
+                            <a class="navbar-item is-size-4 has-text-black-ter" href="settings.html">Settings</a>
                         </div>
                     </div>
-                </div>
+                </nav>
             </div>
         </div>
-
     </div>
-</section>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="level">
+                        <div class="level-left">
+                            <a href="add_trip.html" class="button">
+                                <span>Add Trip</span>
+                                <span class="icon"><i class="fas fa-plus"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Paris Trip Card -->
+            <div class="columns is-centered">
+                <div class="column ">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image trip-image">
+                                        <img src="images/paris.jpg" alt="Paris">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">Paris Girls Trip</p>
+                                    <p class="subtitle is-6">25-27/3/2024</p>
+                                    <p>With Elsa, Anna and Amanda. Planning to do some shopping and of course visiting nice restaurants!</p>
+                                    <article id="new-accommodation" class="media">
+                                        <div class="media-left">
+                                            <span class="tag is-info is-light is-medium"><strong>Mon 25/3 9:00</strong></span>
+                                        </div>
+                                        <div class="media-content">
+                                            <div >
+                                                <p>
+                                                    Flight SK5320 from Arlanda Airport <br>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="media">
+                                        <div class="media-left">
+                                            <span class="tag is-info is-light is-medium"><strong>Wen 27/3 19:20</strong></span>
+                                        </div>
+                                        <div class="media-content">
+                                            <div >
+                                                <p>
+                                                    Flight SK3121 from Heathrow Airport<br>
+                                                    Order taxi from Arlanda? Check with the girls!
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Singapore Trip Card -->
+            <div class="columns is-centered">
+                <div class="column ">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image trip-image">
+                                        <img src="images/singapore.jpg" alt="Singapore">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">Singapore Week</p>
+                                    <p class="subtitle is-6">1/6-7/6/2024</p>
+                                    <p>Gardens by the bay, national gallery and raffles hotel. Singapore Sling. Capsule hostels and hotels!</p>
+                                    <article class="media">
+                                        <div class="media-left">
+                                            <span class="tag is-info is-light is-medium"><strong>Sat 1/6 21:10</strong></span>
+                                        </div>
+                                        <div class="media-content">
+                                            <div >
+                                                <p>
+                                                    Flight SK9027 from Arlanda Airport <br>
+                                                    Arrival Sun 2/6 18:35
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="media">
+                                        <div class="media-left">
+                                            <span class="tag is-info is-light is-medium"><strong>Fri 7/6 21:45</strong></span>
+                                        </div>
+                                        <div class="media-content">
+                                            <div >
+                                                <p>
+                                                    Flight SA2356 to Arlanda Airport  <br>
+                                                    Arrival Sat 8/6 07:35
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 <script>

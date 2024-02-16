@@ -6,156 +6,172 @@
     <title>Add Your Next Trip</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url('images/photos.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+        }
+        .central-container {
+            background-color: white;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+            width: auto;
+            max-width: 100%;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <div class="columns is-centered">
-        <div class="column is-two-thirds">
-            <!-- Top bar navigation -->
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="index.html">
-                        <strong>Voyage Vector</strong>
-                    </a>
-                </div>
-
-                <div class="navbar-menu">
-                    <div class="navbar-start">
-                        <a class="navbar-item" href="index.html">My Trips</a>
-                        <a class="navbar-item" href="settings.html">Settings</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-</div>
-
-<section class="section">
+<div class="container central-container">
     <div class="container">
         <div class="columns is-centered">
-            <div class="column is-two-thirds">
-                <h1 class="title">Where's Your Next Trip?</h1>
-                <form>
-                    <div class="field">
-                        <label class="label" for="destination">Destination</label>
-                        <div class="control">
-                            <input class="input" type="text" id="destination" name="destination" value="London Concert" placeholder="Enter destination">
+            <div class="column">
+                <!-- Top bar navigation -->
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <div class="navbar-item is-size-3 has-text-black-ter">
+                            <strong>Voyage Vector</strong>
                         </div>
                     </div>
 
-                    <div class="field">
-                        <label class="label" for="description">Description</label>
-                        <div class="control">
-                            <textarea class="textarea" id="description" name="description">Concert in London with Anna, one week</textarea>
+                    <div class="navbar-menu">
+                        <div class="navbar-start">
+                            <a class="navbar-item is-size-4 has-text-black-ter" href="index.html">My Trips</a>
+                            <a class="navbar-item is-size-4 has-text-black-ter" href="settings.html">Settings</a>
                         </div>
                     </div>
-
-                    <div class="field is-grouped">
-                        <div class="control is-expanded">
-                            <label class="label" for="start-date">Departure Date</label>
-                            <input class="input" type="date" id="start-date" name="start-date" value="2024-08-23">
-                        </div>
-                        <div class="control is-expanded">
-                            <label class="label" for="end-date">Return Date</label>
-                            <input class="input" type="date" id="end-date" name="end-date" value="2024-08-30">
-                        </div>
-                    </div>
-                    <div class="media mb-2">
-                        <div class="media-left">
-                            <figure id="new-image" class="image is-128x128" style="display: none">
-                                <img src="images/london.jpg" alt="London">
-                            </figure>
-                            <figure id="placeholder" class="image is-128x128">
-                                <img src="images/placeholder-image.png" alt="Placeholder">
-                            </figure>
-                        </div>
-                        <div class="media-right ml-2  " >
-                            <div class="buttons has-addons is-flex-direction-column" style="align-items: flex-start;" >
-                                <button type="button" class="button" onclick="openModal('image-modal')">
-                                    <span class="icon is-small">
-                                        <i class="fas fa-upload"></i>
-                                    </span>
-                                    <span>Add Image</span>
-                                </button>
-                                <button type="button" class="button" onclick="openModal('random-modal')">
-                                    <span class="icon is-small">
-                                        <i class="fas fa-random"></i>
-                                    </span>
-                                    <span>Pick Random</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Hidden schedule item... -->
-                    <article id="new-transport" class="media" style="display: none;">
-                        <div class="media-left">
-                            <span class="tag is-info is-light is-medium"><strong>Sat 23/8, 15:20</strong></span>
-                        </div>
-                        <div class="media-content">
-                            <div class="content">
-                               <!-- <span class="icon is-large">
-                                <i class="fas fa-plane fa-2x"></i>
-                                </span>-->
-                                <p>
-                                    Flight SK1234 from Stockholm Airport <br>
-                                    Arrival 17:30
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                    <article id="new-accommodation" class="media" style="display: none;">
-                        <div class="media-left">
-                            <span class="tag is-info is-light is-medium"><strong>Sat 23/8 - 26/8</strong></span>
-                        </div>
-                        <div class="media-content">
-                            <div class="content">
-                               <!-- <span class="icon is-large">
-                                    <i class="fas fa-hotel fa-2x"></i>
-                                </span>-->
-                                <p>
-                                    Hotel London Square <br>
-                                    Take the subway to London Square station
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                    <article id="new-reservation" class="media" style="display: none;">
-                        <div class="media-left">
-                            <span class="tag is-info is-light is-medium"><strong>Sat 23/3 20:30</strong></span>
-                        </div>
-                        <div class="media-content">
-                            <div class="content">
-                       <!-- <span class="icon is-large">
-                           <i class="fas fa-clock fa-2x"></i>
-                        </span>-->
-                                <p>
-                                    Circles Restaurant <br>
-                                    15 minute policy- Order taxi?
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <div class="buttons mt-2">
-                        <button type="button"  class="button" onclick="openModal('transport-modal')">
-                            <span class="icon"><i class="fas fa-bus"></i></span>
-                            <span>Add Transport</span>
-                        </button>
-                        <button type="button"  class="button" onclick="openModal('accommodation-modal')" ><span class="icon"><i class="fas fa-bed"></i></span><span>Add Accommodation</span></button>
-                        <button type="button"  class="button" onclick="openModal('reservation-modal')"><span class="icon"><i class="fas fa-clock"></i></span><span>Add Reservation</span></button>
-                    </div>
-
-                    <a href="london_trip.html" class="button is-dark">
-                        <span>Save Trip</span>
-                    </a>
-                </form>
+                </nav>
             </div>
         </div>
     </div>
 
-</section>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column">
+                    <h1 class="title">Where's Your Next Trip?</h1>
+                    <form>
+                        <div class="field">
+                            <label class="label" for="destination">Destination</label>
+                            <div class="control">
+                                <input class="input" type="text" id="destination" name="destination" value="London Concert" placeholder="Enter destination">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="description">Description</label>
+                            <div class="control">
+                                <textarea class="textarea" id="description" name="description">Concert in London with Anna, one week</textarea>
+                            </div>
+                        </div>
+
+                        <div class="field is-grouped">
+                            <div class="control is-expanded">
+                                <label class="label" for="start-date">Departure Date</label>
+                                <input class="input" type="date" id="start-date" name="start-date" value="2024-08-23">
+                            </div>
+                            <div class="control is-expanded">
+                                <label class="label" for="end-date">Return Date</label>
+                                <input class="input" type="date" id="end-date" name="end-date" value="2024-08-30">
+                            </div>
+                        </div>
+                        <div class="media mb-2">
+                            <div class="media-left">
+                                <figure id="new-image" class="image is-128x128" style="display: none">
+                                    <img src="images/london.jpg" alt="London">
+                                </figure>
+                                <figure id="placeholder" class="image is-128x128">
+                                    <img src="images/placeholder-image.png" alt="Placeholder">
+                                </figure>
+                            </div>
+                            <div class="media-right ml-2  " >
+                                <div class="buttons has-addons is-flex-direction-column" style="align-items: flex-start;" >
+                                    <button type="button" class="button" onclick="openModal('image-modal')">
+                                    <span class="icon is-small">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                        <span>Add Image</span>
+                                    </button>
+                                    <button type="button" class="button" onclick="openModal('random-modal')">
+                                    <span class="icon is-small">
+                                        <i class="fas fa-random"></i>
+                                    </span>
+                                        <span>Pick Random</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Hidden schedule item... -->
+                        <article id="new-transport" class="media" style="display: none;">
+                            <div class="media-left">
+                                <span class="tag is-info is-light is-medium"><strong>Sat 23/8, 15:20</strong></span>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        Flight SK1234 from Stockholm Airport <br>
+                                        Arrival 17:30
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article id="new-accommodation" class="media" style="display: none;">
+                            <div class="media-left">
+                                <span class="tag is-info is-light is-medium"><strong>Sat 23/8 - 26/8</strong></span>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        Hotel London Square <br>
+                                        Take the subway to London Square station
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article id="new-reservation" class="media" style="display: none;">
+                            <div class="media-left">
+                                <span class="tag is-info is-light is-medium"><strong>Sat 23/3 20:30</strong></span>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        Circles Restaurant <br>
+                                        15 minute policy- Order taxi?
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <div class="buttons mt-2">
+                            <button type="button"  class="button" onclick="openModal('transport-modal')">
+                                <span class="icon"></span>
+                                <span>Add Transport</span>
+                            </button>
+                            <button type="button"  class="button" onclick="openModal('accommodation-modal')" ><span class="icon"><i class="fas fa-bed"></i></span><span>Add Accommodation</span></button>
+                            <button type="button"  class="button" onclick="openModal('reservation-modal')"><span class="icon"><i class="fas fa-clock"></i></span><span>Add Reservation</span></button>
+                        </div>
+
+                        <a href="london_trip.html" class="button is-dark is-pulled-right">
+                            <span>Save Trip</span>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+
 
 
 <!-- Image Modal -->

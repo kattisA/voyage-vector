@@ -6,224 +6,282 @@
     <title>View Trip - London</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url('images/photos.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+        }
+        .central-container {
+            background-color: white;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+            width: auto;
+            max-width: 100%;
+        }
+    </style>
 </head>
 <body>
-<!-- Top bar navigation -->
-<div class="container">
-    <div class="columns is-centered">
-        <div class="column is-two-thirds">
-            <!-- Top bar navigation -->
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="index.html">
-                        <strong>Voyage Vector</strong>
-                    </a>
-                </div>
-
-                <div class="navbar-menu">
-                    <div class="navbar-start">
-                        <a class="navbar-item" href="index.html">My Trips</a>
-                        <a class="navbar-item" href="settings.html">Settings</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-</div>
-
-<section class="section">
+<div class="container central-container">
+    <!-- Top bar navigation -->
     <div class="container">
         <div class="columns is-centered">
-            <div class="column is-two-thirds">
-                <div class="level">
-                    <div class="level-left">
-                        <div>
-                            <h1 class="title">London Concert</h1>
-                            <p class="subtitle is-4">23-30/8/2024</p>
-                            <h2 class="subtitle">Concert in London with Anna, one week</h2>
+            <div class="column">
+                <!-- Top bar navigation -->
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <div class="navbar-item is-size-3 has-text-black-ter">
+                            <strong>Voyage Vector</strong>
                         </div>
                     </div>
-                    <div class="level-right">
-                        <figure class="image pt-4"  style="margin-right: 12rem; width: 256px; height: 256px;">
-                            <img src="images/london.jpg" alt="London">
-                        </figure>
-                    </div>
-                </div>
 
-                <div class="tabs is-boxed">
-                    <ul>
-                        <li class="tab is-active" onclick="openTab(event,'WebDev')"><a >Schedule</a></li>
-                        <li class="tab" onclick="openTab(event,'WebAud')"><a >Diary</a></li>
-                    </ul>
-                </div>
-                <div class="container section">
-                    <div id="WebDev" class="content-tab" >
-                        <div class="box">
-                            <!-- Schedule Items -->
-                            <article class="media">
-                                <div class="media-left">
-                                    <span class="tag is-info is-light is-medium"><strong>Sat 23/8, 15:20</strong></span>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <span class="icon is-large">
-                                        <i class="fas fa-plane fa-2x"></i>
-                                        </span>
-                                        <p>
-                                            Flight SK1234 from Stockholm Airport <br>
-                                            Arrival 17:30
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <article  class="media" >
-                                <div class="media-left">
-                                    <span class="tag is-info is-light is-medium"><strong>Sat 23/8 - 26/8</strong></span>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                <span class="icon is-large">
-                                    <i class="fas fa-hotel fa-2x"></i>
-                                </span>
-                                        <p>
-                                            Hotel London Square <br>
-                                            Take the subway to London Square station
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Hidden schedule item... -->
-                            <article id="new-transport" class="media" style="display: none;">
-                                <div class="media-left">
-                                    <span class="tag is-info is-light is-medium"><strong>Sat 23/8, 19:30</strong></span>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                <span class="icon is-large">
-                                    <i class="fas fa-subway fa-2x"></i>
-                                </span>
-                                        <p>
-                                            Train to the city <br>
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="media" >
-                                <div class="media-left">
-                                    <span class="tag is-info is-light is-medium"><strong>Sat 23/8 20:30</strong></span>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                <span class="icon is-large">
-                                   <i class="fas fa-clock fa-2x"></i>
-                                </span>
-                                        <p>
-                                            Circles Restaurant <br>
-                                            15 minute policy- Order taxi?
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
+                    <div class="navbar-menu">
+                        <div class="navbar-start">
+                            <a class="navbar-item is-size-4 has-text-black-ter" href="index.html">My Trips</a>
+                            <a class="navbar-item is-size-4 has-text-black-ter" href="settings.html">Settings</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="level">
+                        <div class="level-left">
+                            <div>
+                                <h1 class="title">London Concert</h1>
+                                <p class="subtitle is-4">23-30/8/2024</p>
+                                <h2 class="subtitle">Concert in London with Anna, one week</h2>
+                            </div>
+                        </div>
+                        <div class="level-right">
+                            <figure class="image pt-4"  style="margin-right: 12rem; width: 256px; height: 256px;">
+                                <img src="images/london.jpg" alt="London">
+                            </figure>
+                        </div>
+                    </div>
 
-                            <!-- Hidden schedule item... -->
-                            <article id="new-accommodation" class="media" style="display: none;">
-                                <div class="media-left">
-                                    <span class="tag is-info is-light is-medium"><strong>Mon 26/8 - 30/8</strong></span>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                <span class="icon is-large">
-                                    <i class="fas fa-hotel fa-2x"></i>
-                                </span>
-                                        <p>
-                                            Hotel Paddington Palace <br>
-                                            Check in from 15:00
-                                        </p>
+                    <div class="tabs is-boxed">
+                        <ul>
+                            <li class="tab is-active" onclick="openTab(event,'WebDev')"><a >Schedule</a></li>
+                            <li class="tab" onclick="openTab(event,'WebAud')"><a >Diary</a></li>
+                        </ul>
+                    </div>
+                    <div class="container section">
+                        <div id="WebDev" class="content-tab" >
+                            <div class="box">
+                                <!-- Schedule Items -->
+                                <article class="media">
+                                    <div class="media-left">
+                                        <div class="level is-mobile">
+                                            <div class="level-item">
+                                                <span class="tag is-info is-light is-medium mr-2"><strong>Sat 23/8, 15:20</strong></span> <!-- mr-2 adds margin to the right -->
+                                            </div>
+                                            <div class="level-item">
+                                                <span class="icon is-large">
+                                                    <i class="fas fa-plane fa-lg"></i>
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
-                            <!-- Hidden schedule item... -->
-                            <article id="new-reservation" class="media" style="display: none;">
-                                <div class="media-left">
-                                    <span class="tag is-info is-light is-medium"><strong>Mon 26/8 20:00</strong></span>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                <span class="icon is-large">
-                                   <i class="fas fa-clock fa-2x"></i>
-                                </span>
-                                        <p>
-                                            The Hipster Restaurant <br>
-                                            Preorder menu available
-                                        </p>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                Flight SK1234 from Stockholm Airport <br>
+                                                Arrival 17:30
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+                                <article class="media">
+                                    <div class="media-left">
+                                        <div class="level is-mobile">
+                                            <div class="level-item">
+                                                <span class="tag is-info is-light is-medium mr-2"><strong>Sat 23/8 - 26/8</strong></span> <!-- mr-2 adds margin to the right -->
+                                            </div>
+                                            <div class="level-item">
+                                                <span class="icon is-large">
+                                                    <i class="fas fa-hotel fa-lg"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                Hotel London Square <br>
+                                                Take the subway to London Square station
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!-- Hidden schedule item... -->
+                                <article id="new-transport" class="media" style="display: none;">
+                                    <div class="media-left">
+                                        <div class="level is-mobile">
+                                            <div class="level-item">
+                                                <span class="tag is-info is-light is-medium mr-2"><strong>Sat 23/8, 19:30</strong></span> <!-- mr-2 adds margin to the right -->
+                                            </div>
+                                            <div class="level-item">
+                                                <span class="icon is-large">
+                                                    <i class="fas fa-subway fa-lg"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                Train to the city <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="media" >
+                                    <div class="media-left">
+                                        <div class="level is-mobile">
+                                            <div class="level-item">
+                                                <span class="tag is-info is-light is-medium mr-2"><strong>Sat 23/8 20:30</strong></span> <!-- mr-2 adds margin to the right -->
+                                            </div>
+                                            <div class="level-item">
+                                                <span class="icon is-large">
+                                                    <i class="fas fa-clock fa-lg"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                Circles Restaurant <br>
+                                                15 minute policy- Order taxi?
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- Hidden schedule item... -->
+                                <article id="new-accommodation" class="media" style="display: none;">
+                                    <div class="media-left">
+                                        <div class="level is-mobile">
+                                            <div class="level-item">
+                                                <span class="tag is-info is-light is-medium mr-1"><strong>Mon 26/8 - 30/8</strong></span> <!-- mr-2 adds margin to the right -->
+                                            </div>
+                                            <div class="level-item">
+                                                <span class="icon is-large">
+                                                    <i class="fas fa-hotel fa-lg"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                Hotel Paddington Palace <br>
+                                                Check in from 15:00
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!-- Hidden schedule item... -->
+                                <article id="new-reservation" class="media" style="display: none;">
+                                    <div class="media-left">
+                                        <div class="level is-mobile">
+                                            <div class="level-item">
+                                                <span class="tag is-info is-light is-medium mr-1"><strong>Mon 26/8 20:00</strong></span> <!-- mr-2 adds margin to the right -->
+                                            </div>
+                                            <div class="level-item">
+                                                <span class="icon is-large">
+                                                    <i class="fas fa-clock fa-lg"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                The Hipster Restaurant <br>
+                                                Preorder menu available
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="buttons">
+                                <button class="button" onclick="openModal('transport-modal')">
+                                    <span class="icon"><i class="fas fa-bus"></i></span>
+                                    <span>Add Transport</span>
+                                </button>
+                                <button class="button" onclick="openModal('accommodation-modal')"><span class="icon"><i class="fas fa-bed"></i></span><span>Add Accommodation</span></button>
+                                <button class="button" onclick="openModal('reservation-modal')"><span class="icon"><i class="fas fa-clock"></i></span><span>Add Reservation</span></button>
+                            </div>
                         </div>
-                        <div class="buttons">
-                            <button class="button" onclick="openModal('transport-modal')">
-                                <span class="icon"><i class="fas fa-bus"></i></span>
-                                <span>Add Transport</span>
-                            </button>
-                            <button class="button" onclick="openModal('accommodation-modal')"><span class="icon"><i class="fas fa-bed"></i></span><span>Add Accommodation</span></button>
-                            <button class="button" onclick="openModal('reservation-modal')"><span class="icon"><i class="fas fa-clock"></i></span><span>Add Reservation</span></button>
+                        <div id="WebAud" class="content-tab" style="display:none">
+                            <div class="box">
+                                <article class="media">
+                                    <div class="media-left">
+                                        <span class="tag is-info is-light is-medium"><strong>Sat 23/8</strong></span>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                First Day. The trip was exhausting.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="media">
+                                    <div class="media-left">
+                                        <span class="tag is-info is-light is-medium"><strong>Sun 24/8</strong></span>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                Sightseeing Day. We started off with a visit to the museum of...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="media" id="new-diary" style="display: none;">
+                                    <div class="media-left">
+                                        <span class="tag is-info is-light is-medium"><strong>Tue 26/8</strong></span>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p><strong>Concert day</strong></p>
+                                            <p>
+                                                We had the best day at the concert. In the evening we went to the ...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <button class="button" onclick="openModal('diary-modal')"><span class="icon"><i class="fas fa-plus"></i></span><span>Add story</span></button>
                         </div>
                     </div>
-                    <div id="WebAud" class="content-tab" style="display:none">
-                        <div class="box">
-                            <article class="media">
-                                <div class="media-left">
-                                    <span class="tag is-info is-light is-medium"><strong>Sat 23/8</strong></span>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <p>
-                                            First Day. The trip was exhausting.
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="media">
-                                <div class="media-left">
-                                    <span class="tag is-info is-light is-medium"><strong>Sun 24/8</strong></span>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <p>
-                                            Sightseeing Day. We started off with a visit to the museum of...
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="media" id="new-diary" style="display: none;">
-                                <div class="media-left">
-                                    <span class="tag is-info is-light is-medium"><strong>Tue 26/8</strong></span>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <p><strong>Concert day</strong></p>
-                                        <p>
-                                            We had the best day at the concert. In the evening we went to the ...
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <button class="button" onclick="openModal('diary-modal')"><span class="icon"><i class="fas fa-plus"></i></span><span>Add story</span></button>
+                    <div class="container mt-5">
+                        <button class="button is-dark" onclick="openModal('delete-trip-modal')">
+                            <span><i class="fas fa-trash"></i> Delete Trip</span>
+                        </button>
                     </div>
-                </div>
-                <div class="container mt-5">
-                    <button class="button is-dark" onclick="openModal('delete-trip-modal')">
-                        <span><i class="fas fa-trash"></i> Delete Trip</span>
-                    </button>
                 </div>
             </div>
         </div>
 
+</div>
 
-
-    </div>
-</section>
 <!-- Modals -->
 <!-- Transport Modal -->
 <div id="transport-modal" class="modal">
